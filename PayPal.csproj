@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <ApplicationIcon>pay.jpg</ApplicationIcon>
+    <Title>PayPal payment system, accept credit card</Title>
+    <Description>PayPal Library is a powerful and easy-to-integrate .NET library designed to streamline PayPal payment processing for developers. It simplifies interactions with PayPal's APIs, allowing seamless integration of payment gateways, subscription billing, and transaction management into your applications. With built-in support for authentication, error handling, and webhook verification, the library reduces boilerplate code while ensuring secure and compliant transactions.
+
+Whether you're building an e-commerce platform, a donation system, or a subscription service, PayPal Library provides a clean, developer-friendly interface to handle payments, refunds, and invoicing without deep diving into PayPal's complex API documentation. It supports both REST and webhook-based workflows, making it adaptable for real-time payment processing and automated financial operations. Designed for performance and reliability, it's an ideal solution for businesses and developers looking to integrate PayPal with minimal effort and maximum control.</Description>
+    <PackageIcon>pay.jpg</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="pay.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="pay.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
