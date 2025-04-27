@@ -2,6 +2,14 @@
 
 🔥 **Accept Payments in Minutes, Not Days!**  
 
+PayPal.Easy is a game-changer for developers in search of a hassle-free solution to integrate credit card payments into their .NET web applications. The library is designed with simplicity in mind, eliminating the need to grapple with complex APIs or boilerplate code. Developers can now focus on their app’s core logic, knowing that PayPal.Easy takes care of the heavy lifting in payment processing.
+
+With just one method call, PayPal.Easy allows you to generate customized PayPal or card payment links. These links can be tailored to include specific amounts, items, shipping details, and more, giving developers complete control and flexibility. Furthermore, the library supports the entire PayPal ecosystem, ensuring compatibility with credit and debit cards, PayPal balance, Venmo, and other payment methods.
+
+The library also introduces auto-triggered events that notify developers of successful or canceled payments, enabling seamless order fulfillment and status updates. Whether you're handling digital products, automating subscription billing, or capturing buyer addresses for shipping, PayPal.Easy simplifies the process to the core. Within just ten lines of code, developers can implement e-commerce payments, reducing the time and effort involved in integration.
+
+This library is not just a tool—it’s a gateway to offering a smooth and secure payment experience to end users. PayPal.Easy empowers developers to deliver frictionless checkout processes while maximizing efficiency and reliability in their applications. For anyone who has struggled with integrating payment APIs in the past, PayPal.Easy is the ultimate solution to say goodbye to those challenges.
+
 ---
 
 ## 🌟 **Why Developers Love PayPal.Easy**  
@@ -64,22 +72,20 @@ For more details, refer to the [official PayPal documentation](https://developer
 ### Middleware Usage Example
 Here is an example of how to use the `PayPalIpnMiddleware` in your application:
 
-'''csharp
+```csharp
+    var app = builder.Build();
 
-var app = builder.Build();
-
-// user for PayPal IPN validation:
-// in your program.cs file you can use this code to set an event (example: OnPaymentCompleted) that will be executed at every payment.
-app.UseMiddleware<PayPal.PayPalIpnMiddleware>(Events.OnPaymentCompleted);
-
-'''
+    // user for PayPal IPN validation:
+    // in your program.cs file you can use this code to set an event (example: OnPaymentCompleted) that will be executed at every payment.
+    app.UseMiddleware<PayPal.PayPalIpnMiddleware>(Events.OnPaymentCompleted);
+```
 ### Event Handling
 
 You can handle the payment success event by subscribing to the `OnPaymentCompleted` event. This allows you to perform actions like updating order status, sending confirmation emails, etc.
 
 ### Example Event Handler
 Here is an example of how to handle the payment success event:
-'''csharp
+```csharp
 public class Events
 {
 	static internal void OnPaymentCompleted(Dictionary<string, string> instantPaymentNotificationData)
@@ -91,7 +97,7 @@ public class Events
             Debug.WriteLine($"Payment completed. Transaction ID: {transactionId}, Custom ID: {id}, Amount: {amount}");            
         }
 }
-'''
+```
 
 ---
 
@@ -110,11 +116,11 @@ The `GeneratePayPalLink` method allows you to create a PayPal payment link for s
 ### Example Usage
 Here is an example of how to generate a payment link:
 
-'''csharp
+```csharp
 
-            var paypalLink = PayPal.Util.GeneratePayPalLink(Settings.PayPalBusinessEmail, description, CostInEuro, "EUR", id, true, returnUrl, cancelUrl);
-            Redirect = new Uri(paypalLink);
-'''
+        var paypalLink = PayPal.Util.GeneratePayPalLink(Settings.PayPalBusinessEmail, description, CostInEuro, "EUR", id, true, returnUrl, cancelUrl);
+        Redirect = new Uri(paypalLink);
+```
 
 ---
 
