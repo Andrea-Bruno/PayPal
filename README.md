@@ -1,10 +1,10 @@
-﻿# 🚀 Simplify Payments with **[Library Name]** - Effortless .NET Integration for PayPal & Credit Cards  
+﻿# 🚀 Simplify payments with **PayPal.Easy** - Effortless .NET Integration for PayPal (pay by Credit Cards)  
 
 🔥 **Accept Payments in Minutes, Not Days!**  
 
 ---
 
-## 🌟 **Why Developers Love [Library Name]**  
+## 🌟 **Why Developers Love PayPal.Easy**  
 ✅ **Single-Method Simplicity**  
 Generate PayPal/card payment links with **1 method call** – customize amounts, items, shipping, and more via parameters.  
 
@@ -20,7 +20,7 @@ Automatically capture buyer addresses for physical goods.
 ✅ **Full PayPal Ecosystem**  
 Support credit/debit cards, PayPal Balance, Venmo, and more. 
 
-📈 SEO-Optimized Benefits
+📈 **Easy Implementation**
 - ".NET PayPal Library with 1-Click Integration"
 
 - "Credit Card Processing for C# Developers"
@@ -38,32 +38,10 @@ Support credit/debit cards, PayPal Balance, Venmo, and more.
 
 - Donations: Support causes with 3-line integration
 
-# 🚀 Simplify Payments with **[Library Name]** - Effortless .NET Integration for PayPal & Credit Cards  
-
-🔥 **Accept Payments in Minutes, Not Days!**  
-
----
-
-## 🌟 **Why Developers Love [Library Name]**  
-✅ **Single-Method Simplicity**  
-Generate PayPal/card payment links with **1 method call** – customize amounts, items, shipping, and more via parameters.  
-
-✅ **Zero Boilerplate Code**  
-Focus on your app’s logic, not payment APIs. Minimal setup, maximal results.  
-
-✅ **Auto-Triggered Events**  
-Instant notifications for `PaymentSuccess` or `PaymentCanceled` events. Perfect for order fulfillment!  
-
-✅ **Seamless Shipping**  
-Automatically capture buyer addresses for physical goods.  
-
-✅ **Full PayPal Ecosystem**  
-Support credit/debit cards, PayPal Balance, Venmo, and more.  
-
 ---
 
 ## 📖 **Introduction**
-**[Library Name]** is a .NET library designed to simplify PayPal integration. With just a few steps, you can accept payments, handle payment notifications, and automate processes like order management and shipping address capture.
+**[PayPal.Easy]** is a .NET library designed to simplify PayPal integration. With just a few steps, you can accept payments, handle payment notifications, and automate processes like order management and shipping address capture.
 
 ---
 
@@ -73,7 +51,7 @@ The `PayPalIpnMiddleware` allows you to handle PayPal Instant Payment Notificati
 ### How to Configure IPN Notifications
 1. Log in to your PayPal account.
 2. Navigate to **Account Settings > Instant Payment Notifications (IPN)**.
-3. Set the notification URL to point to your `/ipn` endpoint (e.g., `https://yourdomain.com/ipn`).
+3. Set the notification URL to point to your endpoint (e.g., `https://yourdomain.com`).
 4. Save the changes.
 
 For more details, refer to the [official PayPal documentation](https://developer.paypal.com/docs/api-basics/notifications/ipn/).

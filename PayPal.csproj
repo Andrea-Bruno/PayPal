@@ -3,20 +3,28 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    		<Version>$([System.DateTime]::Now.ToString("1.yy.MM.dd"))</Version>
+    
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <ApplicationIcon>pay.jpg</ApplicationIcon>
+    <ApplicationIcon>pay.ico</ApplicationIcon>
     <Title>PayPal payment system, accept credit card</Title>
     <Description>PayPal Library is a powerful and easy-to-integrate .NET library designed to streamline PayPal payment processing for developers. It simplifies interactions with PayPal's APIs, allowing seamless integration of payment gateways, subscription billing, and transaction management into your applications. With built-in support for authentication, error handling, and webhook verification, the library reduces boilerplate code while ensuring secure and compliant transactions.
 
 Whether you're building an e-commerce platform, a donation system, or a subscription service, PayPal Library provides a clean, developer-friendly interface to handle payments, refunds, and invoicing without deep diving into PayPal's complex API documentation. It supports both REST and webhook-based workflows, making it adaptable for real-time payment processing and automated financial operations. Designed for performance and reliability, it's an ideal solution for businesses and developers looking to integrate PayPal with minimal effort and maximum control.
 Keywords:
 credit card processing, debit card payments, card transactions, Visa, Mastercard, American Express, Discover, card authorization, card security, CVV, AVS, PCI DSS compliance, tokenization, card vaulting, card-on-file, online payments, digital payments, e-commerce payments, mobile payments, recurring billing, subscription payments, one-click checkout, express checkout, digital wallets, payment gateway, payment processor, Stripe, PayPal, Square, Braintree, Adyen, 2Checkout, WePay, Authorize.Net, Razorpay, PayU, merchant account, payment API, fraud prevention, 3D Secure, SCA (Strong Customer Authentication), PSD2 compliance, encryption, tokenization, chargeback protection, risk management, KYC (Know Your Customer), AML (Anti-Money Laundering), checkout optimization, hosted payment page, embedded payments, redirect payments, seamless checkout, payment links, invoicing, split payments, multicurrency payments, instant payments, ACH payments, bank transfers, SEPA, direct debit, BNPL (Buy Now Pay Later), open banking, P2P payments, cross-border payments, micropayments</Description>
+    <PackageId>PayPal.Easy</PackageId>
     <PackageIcon>pay.jpg</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Andrea-Bruno/PayPal</RepositoryUrl>
+    <PackageTags>PayPal; credit card processing; debit card payments; card transactions; Visa; Mastercard; American Express; Discover; card authorization; card security; CVV; AVS; PCI DSS compliance; tokenization; card vaulting; card-on-file; online payments; digital payments; e-commerce payments; mobile payments; recurring billing; subscription payments; one-click checkout; express checkout; digital wallets; payment gateway; payment processor; Stripe; PayPal; Square; Braintree; Adyen; 2Checkout; WePay; Authorize.Net; Razorpay; PayU; merchant account; payment API; fraud prevention; 3D Secure; SCA (Strong Customer Authentication); PSD2 compliance; encryption; tokenization; chargeback protection; risk management; KYC (Know Your Customer); AML (Anti-Money Laundering); checkout optimization; hosted payment page; embedded payments; redirect payments; seamless checkout; payment links; invoicing; split payments; multicurrency payments; instant payments; ACH payments; bank transfers; SEPA; direct debit; BNPL (Buy Now Pay Later); open banking; P2P payments; cross-border payments; micropayments</PackageTags>
+    <Version>$([System.DateTime]::Now.ToString("1.yy.MM.dd"))</Version>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="pay.jpg" />
+    <Content Include="pay.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +32,10 @@ credit card processing, debit card payments, card transactions, Visa, Mastercard
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="pay.jpg">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -33,5 +45,22 @@ credit card processing, debit card payments, card transactions, Visa, Mastercard
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
+
+  
+  	<Target Name="SetPackageVersion" DependsOnTargets="Build">
+		<PropertyGroup>
+			<!-- <PackageVersion>$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;))</PackageVersion> -->
+			<!-- You can customize the format and the rule about how version increases here. -->
+			<PackageVersion>$([System.DateTime]::Now.ToString("1.yy.MM.dd"))</PackageVersion>
+		</PropertyGroup>
+	</Target>
+  <Target Name="SetPackageVersion" DependsOnTargets="Build">
+    <PropertyGroup>
+      <!-- <PackageVersion>$([System.DateTime]::Now.ToString(&quot;yyyy.MM.dd.HHmmss&quot;))</PackageVersion> -->
+      <!-- You can customize the format and the rule about how version increases here. -->
+      <PackageVersion>$([System.DateTime]::Now.ToString("1.yy.MM.dd"))</PackageVersion>
+    </PropertyGroup>
+  </Target>
+
 
 </Project>

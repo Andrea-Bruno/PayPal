@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 
 namespace PayPal
 {
+    /// <summary>
+    /// PayPal Utility Class
+    /// </summary>
     public class Util
     {
         /// <summary>
@@ -15,9 +19,9 @@ namespace PayPal
         /// <param name="amount">The payment amount, formatted to two decimal places.</param>
         /// <param name="currency">The currency code for the payment (e.g., "EUR" for Euros).</param>
         /// <param name="purchaseId">A unique purchase ID for transaction tracking.</param>
-        /// <param name="NoShipping">Indicates whether shipping information is required. Defaults to false (Shipping address is required by default).</param>
         /// <param name="returnUrl">Optional URL to redirect the user after a successful payment.</param>
         /// <param name="cancelUrl">Optional URL to redirect the user if the payment is canceled.</param>
+        /// <param name="NoShipping">Indicates whether shipping information is required. Defaults to false (Shipping address is required by default).</param>
         /// <param name="subscriptionPeriod">Optional. Number of days/weeks/months for a subscription. Defaults to 0.</param>
         /// <param name="subscriptionCycleUnit">Optional. Unit of time for billing (e.g., "D", "W", "M", "Y").</param>
         /// <returns>A string representing the full PayPal payment link.</returns>
@@ -25,21 +29,22 @@ namespace PayPal
             string businessEmail,
             string productName,
             double amount,
-            string currency,       
+            string currency,
             string purchaseId,
+            string returnUrl,
+            string cancelUrl,
             bool NoShipping = false,
-            string returnUrl = "",
-            string cancelUrl = "",
             int subscriptionPeriod = 0,
             BillingCycleUnit subscriptionCycleUnit = BillingCycleUnit.Days)
         {
-#if DEBUG
-            // Base URL for PayPal Sandbox (used for testing)
-            string baseUrl = "https://www.sandbox.paypal.com/cgi-bin/webscr";
-#else
+            string baseUrl;
+            if (Debugger.IsAttached)
+                // Base URL for PayPal Sandbox (used for testing)            
+                baseUrl = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+            else
                 // Base URL for PayPal production (used for live payments)
-                string baseUrl = "https://www.paypal.com/cgi-bin/webscr";
-#endif
+                baseUrl = "https://www.paypal.com/cgi-bin/webscr";
+
             // Dictionary for required PayPal payment parameters
             var parameters = new Dictionary<string, string>
                 {
@@ -89,14 +94,29 @@ namespace PayPal
             return $"{baseUrl}?{queryString}";
         }
 
-        // <summary>
+        /// <summary>
         /// Enumeration for the billing cycle unit.
         /// </summary>
         public enum BillingCycleUnit
         {
+            /// <summary>
+            /// Billing cycle in days.
+            /// </summary>
             Days = 'D',
+
+            /// <summary>
+            /// Billing cycle in weeks.
+            /// </summary>
             Weeks = 'W',
+
+            /// <summary>
+            /// Billing cycle in months.
+            /// </summary>
             Months = 'M',
+
+            /// <summary>
+            /// Billing cycle in years.
+            /// </summary>
             Years = 'Y'
         }
     }
