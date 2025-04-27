@@ -1,4 +1,4 @@
-﻿# 🚀 Simplify payments with **PayPal.Easy** - Effortless .NET Integration for PayPal (pay by Credit Cards)  
+﻿# 🚀 Easily integrate online payments with **PayPal.Easy** - Effortless .NET Integration for PayPal (pay by Credit Cards)  
 
 🔥 **Accept Payments in Minutes, Not Days!**  
 
@@ -45,6 +45,11 @@ Support credit/debit cards, PayPal Balance, Venmo, and more.
 
 ---
 
+## Tutorial
+
+This is a minimalist, distraction-free example of a website with an online purchase of a service, and an event notification of the purchase completion.
+We recommend that you start by looking at this example: [Tutorial on GitHub](https://github.com/Andrea-Bruno/Blazor-Auto-GUI-generator-samples/tree/master/PayPalIntegration)
+___
 ## 🔧 **PayPalIpnMiddleware**
 The `PayPalIpnMiddleware` allows you to handle PayPal Instant Payment Notifications (IPN). This middleware verifies incoming notifications and triggers an event when a payment is successfully completed.
 
