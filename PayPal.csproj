@@ -16,7 +16,7 @@ credit card processing, debit card payments, card transactions, Visa, Mastercard
     <PackageId>PayPal.Easy</PackageId>
     <PackageIcon>pay.jpg</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageProjectUrl>https://www.nuget.org/packages/PayPal.Easy/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Andrea-Bruno/PayPal</RepositoryUrl>
     <PackageTags>PayPal; credit card processing; debit card payments; card transactions; Visa; Mastercard; American Express; Discover; card authorization; card security; CVV; AVS; PCI DSS compliance; tokenization; card vaulting; card-on-file; online payments; digital payments; e-commerce payments; mobile payments; recurring billing; subscription payments; one-click checkout; express checkout; digital wallets; payment gateway; payment processor; Stripe; PayPal; Square; Braintree; Adyen; 2Checkout; WePay; Authorize.Net; Razorpay; PayU; merchant account; payment API; fraud prevention; 3D Secure; SCA (Strong Customer Authentication); PSD2 compliance; encryption; tokenization; chargeback protection; risk management; KYC (Know Your Customer); AML (Anti-Money Laundering); checkout optimization; hosted payment page; embedded payments; redirect payments; seamless checkout; payment links; invoicing; split payments; multicurrency payments; instant payments; ACH payments; bank transfers; SEPA; direct debit; BNPL (Buy Now Pay Later); open banking; P2P payments; cross-border payments; micropayments</PackageTags>
     <Version>$([System.DateTime]::Now.ToString("1.yy.MM.dd"))</Version>
