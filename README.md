@@ -49,11 +49,11 @@ Support credit/debit cards, PayPal Balance, Venmo, and more.
 ---
 
 ## 📖 **Introduction**
-**[PayPal.Easy]** is a .NET library designed to simplify PayPal integration. With just a few steps, you can accept payments, handle payment notifications, and automate processes like order management and shipping address capture.
+**PayPal.Easy** is a .NET library designed to simplify PayPal integration. With just a few steps, you can accept payments, handle payment notifications, and automate processes like order management and shipping address capture.
 
 ---
 
-## Tutorial
+## 👉 **Tutorial**
 
 This is a minimalist, distraction-free example of a website with an online purchase of a service, and an event notification of the purchase completion.
 We recommend that you start by looking at this example: [Tutorial on GitHub](https://github.com/Andrea-Bruno/Blazor-Auto-GUI-generator-samples/tree/master/PayPalIntegration)
