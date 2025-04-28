@@ -1,4 +1,4 @@
-﻿# 🚀 Easily integrate online payments with **PayPal.Easy** - Effortless .NET Integration for PayPal (pay by Credit Cards)  
+﻿# 🚀 Simple and easy library to accept credit card payments via PayPal in your application
 
 🔥 **Accept Payments in Minutes, Not Days!**  
 
