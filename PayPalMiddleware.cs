@@ -56,16 +56,25 @@ namespace PayPal
                 // Prepare the verification message to send back to PayPal
                 var verificationMessage = "cmd=_notify-validate&" + ipnMessage;
 
+                // Helper method to parse the notification data
+                var formData = ParseFormData(ipnMessage); 
+
                 // Send the verification request to PayPal
                 using var client = new HttpClient();
 
                 string baseUrl;
-                if (Debugger.IsAttached)
+                if (formData.ContainsKey("test_ipn") && formData["test_ipn"] == "1")
+                {
+                    // The IPN notification is from the PayPal sandbox environment.
                     // Base URL for PayPal Sandbox (used for testing)            
                     baseUrl = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+                }
                 else
+                {
+                    // The IPN notification is from the PayPal production environment.
                     // Base URL for PayPal production (used for live payments)
                     baseUrl = "https://www.paypal.com/cgi-bin/webscr";
+                }
 
                 var response = await client.PostAsync(baseUrl, new StringContent(verificationMessage, Encoding.UTF8, "application/x-www-form-urlencoded"));
 
@@ -76,7 +85,6 @@ namespace PayPal
                 if (verificationResponse == "VERIFIED")
                 {
                     // Parse the IPN message content into key-value pairs for processing
-                    var formData = ParseFormData(ipnMessage); // Helper method to parse the notification data
                     if (formData.ContainsKey("payment_status") && formData["payment_status"] == "Completed")
                     {
                         _onPaymentCompletes.Invoke(formData);

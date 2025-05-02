@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 
@@ -38,7 +37,7 @@ namespace PayPal
             BillingCycleUnit subscriptionCycleUnit = BillingCycleUnit.Days)
         {
             string baseUrl;
-            if (Debugger.IsAttached)
+            if (businessEmail.ToLower().EndsWith("example.com"))
                 // Base URL for PayPal Sandbox (used for testing)            
                 baseUrl = "https://www.sandbox.paypal.com/cgi-bin/webscr";
             else
