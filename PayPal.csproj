@@ -28,7 +28,7 @@ credit card processing, debit card payments, card transactions, Visa, Mastercard
   </ItemGroup>
 
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.9" />
   </ItemGroup>
 
   <ItemGroup>
